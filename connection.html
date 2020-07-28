@@ -1,0 +1,52 @@
+
+{% extends "Layouts/baseCompte.html" %}
+
+
+
+{% block content %}
+
+{% load static %}
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="{% static 'compte/images/img-01.png' %}" alt="IMG">
+				</div>
+
+				<form class="login100-form validate-form" action="{% url 'Connection' %}"  method="POST">
+					{% csrf_token %}
+					<span class="login100-form-title">
+						Se connecter
+					</span>
+						{{form}}
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Connection
+						</button>
+					</div>
+
+					<div class="text-center p-t-12">
+						<span class="txt1">
+							Oublier
+						</span>
+						<a class="txt2" href="#">
+							Username / Password?
+						</a>
+					</div>
+
+					<div class="text-center p-t-136">
+						<a class="txt2" href="{% url 'OuvrirCompte' %}">
+							Créer un compte
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+    </div>
+    
+    {% endblock content %}
+	
+	
+
